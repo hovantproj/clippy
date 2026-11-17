@@ -1,0 +1,1 @@
+# TODO: Make it run ffmpeg strip audio, ignore video

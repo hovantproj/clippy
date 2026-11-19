@@ -1,0 +1,1 @@
+Personal video clipping project, not for commercial use

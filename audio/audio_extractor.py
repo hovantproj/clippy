@@ -8,6 +8,12 @@ def strip_audio(vid_path, sample_rate):
             "ffmpeg", "-i", str(vid_path), 
             "-vn", # Ignore video
             "-ac", "1", # Mono audio true
-            "output/stripped.wav"
-        ]
+            "-f", "f32le", # 32 bit float with little endian (what my laptop uses change depending on device)
+            "pipe:1" # Pipes to stdout
+        ],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=True
     )
+
+    return result

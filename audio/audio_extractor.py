@@ -1,5 +1,3 @@
-# TODO: Make it run ffmpeg strip audio, ignore video
-
 import subprocess
 
 def strip_audio(vid_path, sample_rate):

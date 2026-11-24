@@ -15,7 +15,7 @@ def main():
         return
 
     stripped = strip_audio(file_path, SAMPLE_RATE)
-    samples = np.frombuffer(stripped.stdout, dtype="<f4") # Little endian 4 byte (32 bit) float
+    samples = np.frombuffer(stripped.stdout, dtype="<f4")
     
     results = measure_volume(samples, SAMPLE_RATE)
 

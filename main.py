@@ -3,6 +3,7 @@ from pathlib import Path
 
 from audio.audio_extractor import strip_audio
 from audio.volume_measurer import measure_volume
+from transcription.transcript_extractor import transcribe
 
 SAMPLE_RATE = 16000 # TODO: Choose a suitable sample rate
 
@@ -29,6 +30,10 @@ def main():
     print(f"Start: {loudest['start']:.2f}s")
     print(f"End: {loudest['end']:.2f}s")
     print(f"Volume: {loudest['db']:.2f} dBFS")
+
+    transcript = transcribe(samples)
+
+    print(transcript["text"])
 
 if __name__ == "__main__":
     main()

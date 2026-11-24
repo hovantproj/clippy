@@ -1,9 +1,8 @@
 import whisper
 
-def transcribe():
-    # Load whisper model
+def transcribe(samples):
+    model = whisper.load_model("tiny", "cpu")
 
-    # Convert to text
+    text = model.transcribe(samples, verbose=False, word_timestamps=True)
+    return text
 
-    # Maybe keyword search figure it out
-    

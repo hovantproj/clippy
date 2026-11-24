@@ -16,7 +16,7 @@ def main():
         return
 
     stripped = strip_audio(file_path, SAMPLE_RATE)
-    samples = np.frombuffer(stripped.stdout, dtype="<f4")
+    samples = np.frombuffer(stripped.stdout, dtype="<f4").copy()
     
     results = measure_volume(samples, SAMPLE_RATE)
 
